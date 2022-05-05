@@ -1,12 +1,15 @@
 import streamlit as st
-from utils import txt, txt2, txt3, txt4
-import numpy as np
+from PIL import Image
+
+with open("./assets/style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 st.write('''
 # Kawtar ELTARR
 ''')
 
-st.image('./assets/character.png', width=200)
+image = Image.open('./assets/character.png')
+st.image(image, width=200)
 
 st.markdown('''
 ## Work Experience
